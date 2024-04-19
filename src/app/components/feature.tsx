@@ -50,8 +50,8 @@ const Feature = () => {
         <div className="justify-between max-md:max-w-full">
           <div className="flex flex-wrap justify-center items-center gap-5 max-md:flex-col max-md:gap-0">
             {features.map((item, index) => (
-              <Link href={item.link} className="flex flex-col w-[26%] max-md:ml-0 max-md:w-full" key={index}>
-                <div className="flex flex-col grow justify-between px-6 py-10 w-full text-center bg-white hover:bg-gray-100 rounded-2xl shadow-md max-md:px-5 max-md:mt-10">
+              <Link href={item.link} className="flex flex-col h-[312px] w-[26%] max-md:ml-0 max-md:w-full" key={index}>
+                <div className="flex flex-col grow justify-between p-6 w-full text-center bg-white hover:bg-gray-100 rounded-2xl shadow-md max-md:px-5 max-md:mt-10">
                   <Image
                     loading="lazy"
                     alt={item.icon}
@@ -60,10 +60,10 @@ const Feature = () => {
                     width="80"
                     height="80"
                   />
-                  <div className="mt-5 text-xl font-medium leading-7 text-gray-900">
+                  <div className="mt-5 text-xl font-medium leading-7 h-[28px] text-ellipsis overflow-hidden text-gray-900" title={item.title}>
                     {item.title}
                   </div>
-                  <div className="mt-2 text-base font-normal leading-6 text-gray-900">
+                  <div className="mt-2 text-base font-normal leading-6 h-[96px] text-ellipsis overflow-hidden text-gray-900" title={item.description}>
                     {item.description}
                   </div>
                 </div>

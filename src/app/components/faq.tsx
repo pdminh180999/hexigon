@@ -58,13 +58,14 @@ const FAQ = () => {
         </div>
         {faqs.map((faq, index) => (
           <Accordion open={open === index} icon={<Icon id={index} open={open} />} key={index}
-            className="mt-8 max-w-full w-[768px] max-md:mt-10">
-            <AccordionHeader onClick={() => handleOpen(index)}>
+            className="mt-8 max-w-full w-[768px] max-md:mt-10" placeholder="" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <AccordionHeader className="text-black" onClick={() => handleOpen(index)} placeholder="" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
               {faq.question}
             </AccordionHeader>
-            <AccordionBody>
+            <AccordionBody className="text-black">
               {faq.answer}
             </AccordionBody>
+            {index !== faqs.length - 1 ? <div className="shrink-0 mt-8 max-w-full h-px bg-gray-200 w-[768px]" /> : <></>}
           </Accordion>
         ))}
         <div className="flex justify-center items-center self-stretch px-8 py-10 mt-16 rounded-2xl bg-neutral-100 max-md:px-5 max-md:mt-10 max-md:max-w-full">

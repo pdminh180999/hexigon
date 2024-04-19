@@ -5,8 +5,8 @@ const Teams = () => {
   const members = [
     {
       title: 'Co-Founder',
-      name: 'Kong Doan',
-      image: '/img/KongDoan.png',
+      name: 'Nam Nguyen',
+      image: '/img/NamNguyen.png',
       linkX: '/',
       linkFB: '/',
       linkIn: '/'
@@ -49,7 +49,7 @@ const Teams = () => {
         <br />
         Dedicated to Turning Ideas into Reality
       </div>
-      <div className="self-stretch px-48 mt-20 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      <div className="self-stretch px-48 mt-20 max-xl:px-5 max-xl:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           {members.map((item, index) => (
             <div className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full" key={index}>
@@ -58,7 +58,7 @@ const Teams = () => {
                   alt={item.image}
                   loading="lazy"
                   src={item.image}
-                  className="w-full hover:scale-105 transition duration-500"
+                  className="w-full hover:scale-105 transition duration-500 aspect-[0.71] rounded-[20px]"
                   width="286"
                   height="404"
                 />

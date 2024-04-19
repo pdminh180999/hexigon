@@ -125,7 +125,7 @@ const Footer = () => {
                 alt="logo"
                 loading="lazy"
                 src="/img/logo_black.png"
-                className="max-w-full aspect-[3.23]"
+                className="max-w-full"
                 width="130"
                 height="40"
               />

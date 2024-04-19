@@ -1,7 +1,20 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 const Banner = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOptionClick = (option: any) => {
+    setIsOpen(false);
+  };
+
   const navigation = [
     {
       title: "Service",
@@ -35,19 +48,18 @@ const Banner = () => {
         <Image
           alt=""
           loading="lazy"
-          src="/img/tech_drop.png"
+          src="/img/tech_drop.gif"
           className="object-cover absolute inset-0 size-full"
           width="1900"
           height="900"
-          unoptimized
         />
-        <div className="flex relative flex-col justify-center px-64 py-4 w-full text-white max-md:px-5 max-md:max-w-full">
-          <div className="flex gap-5 justify-between mx-5 max-md:flex-wrap max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
-            <div className="flex gap-5 justify-between my-auto text-base leading-6 max-md:flex-wrap max-md:max-w-full">
-              <Link href="/">
+        <div className="flex relative flex-col justify-center items-center px-64 py-4 w-full text-white max-2xl:px-5 max-2xl:max-w-full">
+          <div className="flex gap-5 justify-between items-center mx-5 max-md:flex-wrap max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
+            <div className="flex gap-5 justify-between items-center my-auto text-base leading-6 max-md:flex-wrap max-md:max-w-full">
+              <Link href="/" className="shrink-0 max-w-full">
                 <Image src="/img/logo.png" alt="logo" width="150" height="40" />
               </Link>
-              <ul className="flex gap-5 justify-between my-auto max-md:flex-wrap">
+              <ul className="flex xl:gap-5 justify-between my-auto max-md:flex-wrap max-lg:hidden">
                 {navigation.map((item, index) => (
                   <li className="mr-3 nav__item" key={index}>
                     <Link
@@ -60,8 +72,38 @@ const Banner = () => {
                   </li>
                 ))}
               </ul>
+              <div className="relative inline-block text-left lg:hidden">
+                <div>
+                  <svg
+                    onClick={toggleDropdown}
+                    className="cursor-pointer h-6 w-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+                </div>
+
+                {isOpen && (
+                  <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[100]">
+                    <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                      {navigation.map((item, index) => (
+                        <Link
+                          key={index}
+                          href={item.link}
+                          passHref
+                          className="block px-4 py-2 text-xl font-normal text-black no-underline rounded-md hover:underline focus:underline"
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-            <Link href="/" className="justify-center px-6 py-3 text-lg font-bold leading-6 bg-sky-500 rounded-lg backdrop-blur-[10px] max-md:px-5">
+            <Link href="/" className="justify-center px-6 py-3 text-lg font-bold leading-6 bg-sky-500 rounded-lg backdrop-blur-[10px] max-md:px-5 text-nowrap">
               Contact us
             </Link>
           </div>

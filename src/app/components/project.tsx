@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: 'MobiFone Pay Wallet Mobile App',
       description: 'MobiFone Pay provides a user-friendly platform for quick utility bill payments, mobile top-ups, and exclusive deals. With advanced security features like password encryption, fingerprint recognition, and auto-logout, users can securely manage transactions. The app streamlines user experience with intuitive design and offers versatile functionality. We designed and developed MobiFone Pay with a user-friendly interface, ensuring seamless navigation for users. Employing advanced security measures like password encryption and multi-factor authentication, we created a robust platform for secure transactions. Additionally, our team integrated features for bill management, mobile top-up, and exclusive offers, enhancing user convenience.',
-      image: '/img/project3.png',     
+      image: '/img/project3.png',
     },
     {
       title: 'Visafe App - Ensuring Online Safety',
@@ -34,9 +34,9 @@ const Projects = () => {
       <div className="mt-5 text-xl leading-7 text-center text-zinc-600 w-[768px] max-md:max-w-full">
         We&apos;ve exceled our experience in a wide range of industries to bring valuable insights and provide our customers
       </div>
-      <div className="px-48 mt-24 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      <div className="px-48 mt-24 max-xl:px-5 max-xl:mt-10 max-md:max-w-full">
         {projects.map((item, index) => (
-          <div className={index % 2 === 0 ? "flex gap-24 max-md:flex-col max-md:gap-0 mt-16" : "flex flex-row-reverse gap-24 max-md:flex-col max-md:gap-0 mt-16"} key={index}>
+          <div className={index % 2 === 0 ? "flex items-center gap-24 max-md:flex-col max-md:gap-0 mt-16" : "flex items-center flex-row-reverse gap-24 max-md:flex-col max-md:gap-0 mt-16"} key={index}>
             <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
                 <div className="text-2xl font-medium leading-8 text-gray-900 max-md:max-w-full">

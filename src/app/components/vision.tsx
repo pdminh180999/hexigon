@@ -73,7 +73,7 @@ const Vision = () => {
                   <div className="text-lg font-medium leading-7 text-gray-900">
                     {vision.title}
                   </div>
-                  <div className="mt-1 text-base leading-6 text-neutral-500">
+                  <div className="mt-1 text-base leading-6 text-neutral-500 text-ellipsis overflow-hidden">
                     {vision.description}
                   </div>
                 </div>
